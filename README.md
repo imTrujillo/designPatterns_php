@@ -1,4 +1,4 @@
-# designPatterns_php
+# Design Patterns
 
 The exercises implement the following design patterns:
 1. Factory pattern
