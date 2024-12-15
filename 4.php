@@ -3,6 +3,8 @@ interface IMessageStrategy
 {
     public function displayMessage($message);
 }
+
+//Options to display message
 class JSON implements IMessageStrategy
 {
     public function displayMessage($message)
@@ -26,7 +28,7 @@ class TXTFile implements IMessageStrategy
     }
 }
 
-
+//The main class (context)
 class Message 
 {
     public $strategy;
@@ -42,6 +44,7 @@ class Message
     }
 }
 
+//User class
 class User
 {
     public $message;
@@ -62,7 +65,7 @@ class User
 }
 
 try{
-    $user = new User("json","Testing json option");
+    $user = new User("json","Testing json option"); //the user chooses an option
     $user = new User("console", "Testing console option");
     $user = new User("txt", "Testing Txt Option");
 }

@@ -5,7 +5,7 @@ interface ICharacter
     public function addWeapon();
 }
 
-
+//User class
 class GameCharacter implements ICharacter
 {
     public $name;
@@ -19,6 +19,7 @@ class GameCharacter implements ICharacter
     }
 }
 
+//Decorator class
 class CharacterDecorator implements ICharacter
 {
     public $character;
@@ -33,6 +34,7 @@ class CharacterDecorator implements ICharacter
     }
 }
 
+//Add items to the user
 class SwordDecorator extends CharacterDecorator
 {
     public function addWeapon()
@@ -65,8 +67,8 @@ class TorpedoDecorator extends CharacterDecorator
     }
 }
 
-$character = new GameCharacter("Peeta Mellark");
-echo $character->addWeapon() . "<br>";
+$character = new GameCharacter("Peeta Mellark"); //The user is created
+echo $character->addWeapon() . "<br>"; //A new weapon is added into the user's equipment
 
 $bow = new BowDecorator($character);
 echo $bow->addWeapon(). "<br>";

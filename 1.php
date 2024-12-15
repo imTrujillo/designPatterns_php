@@ -1,4 +1,5 @@
 <?php
+//User Class
 class UserCharacter 
 {
     public $name;
@@ -40,6 +41,7 @@ interface Stats
     public function speed();
 }
 
+//Products Classes
 class Zombie implements Stats
 {
     public function attack($user)
@@ -93,12 +95,12 @@ class Skeleton implements Stats
 }
 
 try{
-    $character = new UserCharacter("Mario",100,24);
-    $spawnEnemy = EnemiesFactory::spawnEnemy($character);
-    $spawnEnemy->attack($character);
-    $spawnEnemy->speed();
+    $character = new UserCharacter("Mario",100,24); //Create a user
+    $spawnEnemy = EnemiesFactory::spawnEnemy($character); //spawn enemy
+    $spawnEnemy->attack($character); //The enemy attacks the user
+    $spawnEnemy->speed(); //show details about enemy speed
 
-    $character->level = 2;
+    $character->level = 2; //update the user's level
     $spawnEnemy2 = EnemiesFactory::spawnEnemy($character);
     $spawnEnemy2->attack($character);
     $spawnEnemy2->speed();
@@ -108,9 +110,9 @@ try{
     $spawnEnemy->attack($character);
     $spawnEnemy->attack($character);
     $spawnEnemy->attack($character);
-    $spawnEnemy->attack($character);
+    $spawnEnemy->attack($character); //when the user's hp is equal or less than 0, it's game over
 
-    $character2 = new UserCharacter("Camilo",200,4);
+    $character2 = new UserCharacter("Camilo",200,4); //the user's hp has to be within 0-100
     $spawnEnemy = EnemiesFactory::spawnEnemy($character2);
     $spawnEnemy->attack($character2);
 
